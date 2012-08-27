@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.cloudhoist</groupId>
     <artifactId>pallet-crate-pom</artifactId>
-    <version>0.7.1</version>
+    <version>0.7.2-SNAPSHOT</version>
     <relativePath />
   </parent>
   <artifactId>cinderella</artifactId>
@@ -22,40 +22,6 @@
       <scope>test</scope>
       <version>0.7.0</version>
     </dependency>
-    <dependency>
-      <groupId>org.cloudhoist</groupId>
-      <artifactId>jetty</artifactId>
-      <version>0.7.0-SNAPSHOT</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jclouds</groupId>
-      <artifactId>jclouds-compute</artifactId>
-      <version>${jclouds.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jclouds</groupId>
-      <artifactId>jclouds-blobstore</artifactId>
-      <version>${jclouds.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jclouds</groupId>
-      <artifactId>jclouds-all</artifactId>
-      <version>${jclouds.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.cloudhoist</groupId>
-      <artifactId>pallet-jclouds</artifactId>
-      <version>${palletjclouds.version}</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
-  <properties>
-    <jclouds.version>1.5.0-beta.11</jclouds.version>
-    <palletjclouds.version>1.5.0-SNAPSHOT</palletjclouds.version>
-  </properties>
 </project>
