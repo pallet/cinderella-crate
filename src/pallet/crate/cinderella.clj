@@ -73,6 +73,8 @@ https://github.com/cinderella/cinderella"
                                      @(pipe (curl --silent ~url)
                                             (grep href)
                                             (grep war)
+                                            (grep -v sha1)
+                                            (grep -v md5)
                                             (sed "'s/^.*<a href=\"//'")
                                             (sed "'s/\".*$//'")
                                             (tail -1))))}))))
@@ -120,7 +122,10 @@ https://github.com/cinderella/cinderella"
 (defmulti install-method (fn [session settings] (:strategy settings)))
 (defmethod install-method :jetty-war
   [session {:keys [jetty-war]}]
-  (apply-map deploy session "root" jetty-war))
+  (->
+   session
+   (package "curl")
+   (apply-map-> deploy "root" jetty-war)))
 
 (defn install-cinderella
   "Install cinderella. By default will install as a war into jetty."
