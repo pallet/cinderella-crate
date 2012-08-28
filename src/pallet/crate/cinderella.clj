@@ -49,7 +49,7 @@ https://github.com/cinderella/cinderella"
    ;; :backend-identity identity for backend service
    ;; :backend-credential credential for backend service
    :ec2-port 8080
-   :ec2-version "2010-11-15"
+   :ec2-version "2009-10-31"
    ;; default identity for frontend
    :identity "MvndHwA4e6dgaGV23L94"
    :credential "A50GS9tj2DLXRln4rf1K+A/CSjmAbBGw0H5yul6s"})

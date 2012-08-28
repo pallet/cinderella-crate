@@ -50,11 +50,11 @@
         node (first (nodes-in-group session group-name))
         endpoint (format "http://%s:%s/" (primary-ip node) ec2-port)
         _ (logging/debugf "Testing with %s %s %s" identity credential endpoint)
-        c (compute-service "aws-ec2" identity credential
+        c (compute-service "ec2" identity credential
                            :jclouds.endpoint endpoint)
         images (.. c getContext
                    (unwrap org.jclouds.ec2.EC2ApiMetadata/CONTEXT_TOKEN)
-                   getApi getAMIServices (describeImagesInRegion nil nil))]
+                   getApi getAMIServices (describeImagesInRegion nil []))]
     (is c "Compute returned")
     (is (seq images) "Compute useable")
     (logging/infof "Compute images %s" (vec images))
