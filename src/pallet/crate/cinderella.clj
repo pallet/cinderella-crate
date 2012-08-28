@@ -120,7 +120,7 @@ https://github.com/cinderella/cinderella"
 (defmulti install-method (fn [session settings] (:strategy settings)))
 (defmethod install-method :jetty-war
   [session {:keys [jetty-war]}]
-  (apply-map deploy session "ROOT" jetty-war))
+  (apply-map deploy session "root" jetty-war))
 
 (defn install-cinderella
   "Install cinderella. By default will install as a war into jetty."
